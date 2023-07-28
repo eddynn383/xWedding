@@ -1,0 +1,25 @@
+.button {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-size: 16px;
+    line-height: 1;
+    min-width: 44px;
+    min-height: 44px;
+    background-color: transparent;
+    border-radius: 8px;
+    &-inner {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+    &:hover {
+        background-color: var(--accent-color-400);
+        color: var(--white);
+    }
+    &[data-state="selected"] {
+        background-color: var(--accent-color-400);
+        color: var(--white);
+    }
+} 

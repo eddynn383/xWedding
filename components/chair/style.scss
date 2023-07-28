@@ -1,0 +1,11 @@
+.chair {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--background-color-700);
+    &[data-status="filled"] {
+        background-color: var(--accent-color-400);
+    }
+}
+ 

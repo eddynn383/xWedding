@@ -1,0 +1,14 @@
+.navigation {
+    display: grid;
+    background-color: var(--background-color-100);
+    color: var(--text-color-700);
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+        padding: 8px;
+    }
+}  

@@ -1,0 +1,10 @@
+.main {
+    display: grid;
+    grid-template-rows: auto min-content;
+    height: 100vh;
+    &_content {
+        display: grid;
+        grid-template-rows: min-content auto;
+        overflow: hidden;
+    }
+}

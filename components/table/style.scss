@@ -1,0 +1,20 @@
+.table {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 10px;
+    width: 100%;
+    height: min-content;
+    min-height: 100px;
+    background-color: var(--background-color-100);
+    align-content: space-between;
+    justify-items: center;
+    padding: 10px;
+    border-radius: 12px;
+    &-number {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+} 
