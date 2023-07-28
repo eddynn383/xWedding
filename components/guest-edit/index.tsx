@@ -10,7 +10,7 @@ const GuestEdit = ({data}: any) => {
                 {data.table && <span className={sx["user-table"]}>{data.table}</span>}
             </div>
             <Button url={`/guests/${data.id}`}>
-                <FontAwesomeIcon icon="pen" />
+                <FontAwesomeIcon icon="user-pen" />
             </Button>
         </div>
     )

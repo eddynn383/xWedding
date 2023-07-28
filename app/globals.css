@@ -46,6 +46,13 @@ a {
     text-decoration: none;
 }
 
+button {
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
 .list--reset {
     list-style: none;
     margin: 0;

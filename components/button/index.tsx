@@ -4,21 +4,22 @@ import Link from "next/link";
 import { ReactElement } from "react";
 
 type ButtonProps = {
+    type?: "button" | "submit" | "reset";
     url?: Url;
     state?: "default" | "selected";
     children: ReactElement | string;
 }
 
-const Button = ({url, state = "default", children}: ButtonProps) => {
+const Button = ({type="button", url, state = "default", children}: ButtonProps) => {
     return (
-        <div className={sx["button"]} data-state={state}>
+        <button type={type} className={sx["button"]} data-state={state}>
             {
                 url && <Link href={url} className={sx["button-inner"]}>{children}</Link>
             }
             {
                 !url && <span className={sx["button-inner"]}>{children}</span>
             }
-        </div>
+        </button>
     )
 }
 
