@@ -11,7 +11,7 @@ generator client {
     provider = "prisma-client-js"
 }
 
-enum Status {
+enum State {
     empty
     filled
 }
@@ -23,34 +23,27 @@ model Table {
     guests    Guest[]
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-
-    //   lunches  Lunch[]
     @@map("Tables")
 }
 
 model Seat {
     id      String @id @default(auto()) @map("_id") @db.ObjectId
-    number  Int    @unique
-    status  Status @default(empty)
+    state   State? @default(empty)
     table   Table  @relation(fields: [tableId], references: [id])
     tableId String @unique @db.ObjectId
-    guest   Guest  @relation(fields: [guestId], references: [id])
-    guestId String @unique @db.ObjectId
-
-    //   lunch    Lunch?  // Optional, as a seat might not be occupied by a lunch
+    guest   Guest?  @relation(fields: [guestId], references: [id])
+    guestId String? @unique @db.ObjectId
     @@map("Seats")
 }
 
 model Guest {
     id        String   @id @default(auto()) @map("_id") @db.ObjectId
     name      String   @unique
-    tableId   String?   @unique @db.ObjectId
+    tableId   String?  @unique @db.ObjectId
     table     Table?   @relation(fields: [tableId], references: [id])
     seat      Seat?
     arrived   Boolean  @default(false)
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-
-    //   lunches  Lunch[]
     @@map("Guests")
 }

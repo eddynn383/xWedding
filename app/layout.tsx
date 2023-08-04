@@ -2,11 +2,12 @@ import "./globals.css";
 import sx from "@/styles/layout.module.scss"
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Navigation } from "@/components";
+import { Header, Navigation } from "@/components";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import 'material-icons/iconfont/material-icons.css'
 import { Providers } from "./providers";
 
 config.autoAddCss = false;
@@ -27,7 +28,7 @@ export default function RootLayout({children}: RootLayoutProps) {
 
     const navItems = [
         {
-            url: "/",
+            url: "/dashboard",
             icon: "home"
         },
         {
@@ -35,8 +36,8 @@ export default function RootLayout({children}: RootLayoutProps) {
             icon: "users"
         },
         {
-            url: "/settings",
-            icon: "gears"
+            url: "/tables",
+            icon: "table-cells"
         }
     ]
 
@@ -49,8 +50,9 @@ export default function RootLayout({children}: RootLayoutProps) {
                     </section>
                     <Navigation items={navItems}/>
                 </Providers>
-                <div id="drawer-root"></div>
+                {/* <div id="modal-root">{modal}</div>
+                <div id="drawer-root">{drawer}</div> */}
             </body>
         </html>
-    );
+    ); 
 }

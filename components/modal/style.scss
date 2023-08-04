@@ -1,0 +1,32 @@
+.modal {
+    display: block;
+    position: fixed;
+    inset: 0;
+    transition: all .3s ease-in-out .3s;
+    z-index: 9;
+    &[data-type="popup"] {
+        inset: 0;
+        background-color: rgba(10, 10, 10, 0.5);
+        transform: translateY(100%);
+    }
+    &[data-type="drawer"] {
+        display: grid;
+        align-content: end;
+        inset: 0 0 68px 0;
+        .modal-inner {
+            background-color: var(--background-color-100);
+            border-bottom: 1px solid var(--background-color-200);
+            color: var(--text-color-700);
+            padding: 16px;
+            min-height: 400px;
+            height: auto;
+            max-height: 420px;
+            overflow: auto;
+        }
+        transform: translateY(100%);
+        z-index: 7;
+    }
+    &[data-state="active"] {
+        transform: translateY(0);
+    }
+}

@@ -1,19 +1,34 @@
 @import "../components/button/style.scss";
-@import "../components/chair/style.scss";
 @import "../components/guest-edit/style.scss";
 @import "../components/guest-selector/style.scss";
 @import "../components/header/style.scss";
 @import "../components/icon/style.scss";
 @import "../components/input/style.scss";
+@import "../components/modal/style.scss";
 @import "../components/navigation/style.scss";
+@import "../components/seat/style.scss";
+@import "../components/seats-list/style.scss";
 @import "../components/table/style.scss";
 
 .body {
     display: grid;
     overflow-y: auto;
-    padding: 15px;
+    padding: 12px;
+    &[data-layout="two"] {
+        grid-template-rows: auto min-content;
+        gap: 10px;
+    }
     &-top {
         padding: 20px;
+    }
+    &-content {
+        display: grid;
+        grid-template-rows: auto min-content;
+        gap: 12px;
+    }
+    .actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -42,4 +57,14 @@
     &-right {
         align-content: start;
     } 
+}
+
+.tables-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-content: start;
 }

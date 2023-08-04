@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3818",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -14,12 +14,12 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@prisma/client": "^5.0.0",
     "@types/node": "20.4.5",
     "@types/react": "18.2.16",
     "@types/react-dom": "18.2.7",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
+    "material-icons": "^1.13.9",
     "mongodb": "^5.7.0",
     "next": "13.4.12",
     "react": "18.2.0",
@@ -28,6 +28,9 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "prisma": "^5.0.0"
+    "@prisma/client": "^5.1.1",
+    "i": "^0.3.7",
+    "npm": "^9.8.1",
+    "prisma": "^5.1.1"
   }
 }

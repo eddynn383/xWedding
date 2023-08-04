@@ -1,0 +1,33 @@
+.seat {
+    position: relative;
+    display: inline-grid;
+    align-content: center;
+    justify-content: center;
+    background-color: var(--background-color-700);
+
+    &[data-size="S"] {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+    &[data-size="M"] {
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+        .chair-inner {
+            padding: 12px;
+        }
+    }
+    &[data-state="filled"] {
+        background-color: var(--accent-color-400);
+    }
+    &-close {
+        position: absolute;
+        top: -6px;
+        right: -6px;
+        .button {
+            border-radius: 50%;
+        }
+    }
+}
+ 

@@ -137,147 +137,438 @@
     }
 }
 
-[data-theme="light"] .input {
-    &[data-shade="100"] {
-        background: var(--input-background-color-default, var(--background-color-150, #F0F2F4));
-        border-color: var(--input-border-color-default, var(--border-color-150, #F0F2F4));
-        color: var(--input-text-color, var(--text-color-200, #363636));
-        input {
-            color: inherit;
-
-            &:-webkit-autofill,
-            &:-webkit-autofill:hover,
-            &:-webkit-autofill:focus,
-            &:-webkit-autofill:active {
-                box-shadow: 0 0 0 30px var(--background-color-150, #F0F2F4) inset !important;
-                -webkit-box-shadow: 0 0 0 30px var(--background-color-150, #F0F2F4) inset !important;
-                -webkit-text-fill-color: var(--text-color-200, #363636)
+.input {
+    &[data-variant="solid"] {
+        &[data-shade="100"] {
+            background: var(--input-background-color-default, var(--background-color-100, #fff));
+            border-color: var(--input-border-color-default, var(--border-color-100, #fff));
+            color: var(--input-text-color, var(--text-color-200, #363636));
+            input {
+                color: inherit;
+    
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover,
+                &:-webkit-autofill:focus,
+                &:-webkit-autofill:active {
+                    box-shadow: 0 0 0 30px var(--background-color-100, #fff) inset !important;
+                    -webkit-box-shadow: 0 0 0 30px var(--background-color-100, #fff) inset !important;
+                    -webkit-text-fill-color: var(--text-color-200, #363636)
+                }
+    
+                &::placeholder {
+                    /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                    opacity: 1;
+                    /* Firefox */
+                }
+    
+                &:-ms-input-placeholder {
+                    /* Internet Explorer 10-11 */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                }
+    
+                &::-ms-input-placeholder {
+                    /* Microsoft Edge */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                }
             }
-
-            &::placeholder {
-                /* Chrome, Firefox, Opera, Safari 10.1+ */
-                color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
-                opacity: 1;
-                /* Firefox */
+        }
+    
+        &[data-shade="200"] {
+            background: var(--input-background-color-default, var(--background-color-200, #E1E6E9));
+            border-color: var(--input-border-color-default, var(--border-color-200, #E1E6E9));
+            color: var(--input-text-color, var(--text-color-200, #363636));
+            input {
+                color: inherit;
+    
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover,
+                &:-webkit-autofill:focus,
+                &:-webkit-autofill:active {
+                    box-shadow: 0 0 0 30px var(--background-color-200, #E1E6E9) inset !important;
+                    -webkit-box-shadow: 0 0 0 30px var(--background-color-200, #E1E6E9) inset !important;
+                    -webkit-text-fill-color: var(--text-color-200, #363636)
+                }
+    
+                &::placeholder {
+                    /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                    opacity: 1;
+                    /* Firefox */
+                }
+    
+                &:-ms-input-placeholder {
+                    /* Internet Explorer 10-11 */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                }
+    
+                &::-ms-input-placeholder {
+                    /* Microsoft Edge */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                }
             }
+        }
 
-            &:-ms-input-placeholder {
-                /* Internet Explorer 10-11 */
-                color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
-            }
-
-            &::-ms-input-placeholder {
-                /* Microsoft Edge */
-                color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+        &[data-shade="300"] {
+            background: var(--input-background-color-default, var(--background-color-622, #E1E6E9));
+            border-color: var(--input-border-color-default, var(--border-color-622, #E1E6E9));
+            color: var(--input-text-color, var(--text-color-200, #363636));
+            input {
+                color: inherit;
+    
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover,
+                &:-webkit-autofill:focus,
+                &:-webkit-autofill:active {
+                    box-shadow: 0 0 0 30px var(--background-color-300, #E1E6E9) inset !important;
+                    -webkit-box-shadow: 0 0 0 30px var(--background-color-300, #E1E6E9) inset !important;
+                    -webkit-text-fill-color: var(--text-color-200, #363636)
+                }
+    
+                &::placeholder {
+                    /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                    opacity: 1;
+                    /* Firefox */
+                }
+    
+                &:-ms-input-placeholder {
+                    /* Internet Explorer 10-11 */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                }
+    
+                &::-ms-input-placeholder {
+                    /* Microsoft Edge */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                }
             }
         }
     }
-
-    &[data-shade="200"] {
-        background: var(--input-background-color-default, var(--background-color-200, #E1E6E9));
-        border-color: var(--input-border-color-default, var(--border-color-200, #E1E6E9));
-        color: var(--input-text-color, var(--text-color-200, #363636));
-        input {
-            color: inherit;
-
-            &:-webkit-autofill,
-            &:-webkit-autofill:hover,
-            &:-webkit-autofill:focus,
-            &:-webkit-autofill:active {
-                box-shadow: 0 0 0 30px var(--background-color-200, #E1E6E9) inset !important;
-                -webkit-box-shadow: 0 0 0 30px var(--background-color-200, #E1E6E9) inset !important;
-                -webkit-text-fill-color: var(--text-color-200, #363636)
+    &[data-variant="outline"] {
+        &[data-shade="100"] {
+            background: transparent;
+            border-color: var(--input-border-color-default, var(--border-color-100, #fff));
+            color: var(--input-text-color, var(--text-color-100, #363636));
+            input {
+                color: inherit;
+    
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover,
+                &:-webkit-autofill:focus,
+                &:-webkit-autofill:active {
+                    box-shadow: 0 0 0 30px transparent inset !important;
+                    -webkit-box-shadow: 0 0 0 30px var(--background-color-100, #fff) inset !important;
+                    -webkit-text-fill-color: var(--text-color-100, #363636)
+                }
+    
+                &::placeholder {
+                    /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                    opacity: 1;
+                    /* Firefox */
+                }
+    
+                &:-ms-input-placeholder {
+                    /* Internet Explorer 10-11 */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                }
+    
+                &::-ms-input-placeholder {
+                    /* Microsoft Edge */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                }
             }
-
-            &::placeholder {
-                /* Chrome, Firefox, Opera, Safari 10.1+ */
-                color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
-                opacity: 1;
-                /* Firefox */
+        }
+    
+        &[data-shade="200"] {
+            background: transparent;
+            border-color: var(--input-border-color-default, var(--border-color-200, #E1E6E9));
+            color: var(--input-text-color, var(--text-color-100, #363636));
+            input {
+                color: inherit;
+    
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover,
+                &:-webkit-autofill:focus,
+                &:-webkit-autofill:active {
+                    box-shadow: 0 0 0 30px transparent inset !important;
+                    -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+                    -webkit-text-fill-color: var(--text-color-100, #363636)
+                }
+    
+                &::placeholder {
+                    /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                    opacity: 1;
+                    /* Firefox */
+                }
+    
+                &:-ms-input-placeholder {
+                    /* Internet Explorer 10-11 */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                }
+    
+                &::-ms-input-placeholder {
+                    /* Microsoft Edge */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                }
             }
-
-            &:-ms-input-placeholder {
-                /* Internet Explorer 10-11 */
-                color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
-            }
-
-            &::-ms-input-placeholder {
-                /* Microsoft Edge */
-                color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+        }
+        &[data-shade="300"] {
+            background: transparent;
+            border-color: var(--input-border-color-default, var(--border-color-300, #E1E6E9));
+            color: var(--input-text-color, var(--text-color-100, #363636));
+            input {
+                color: inherit;
+    
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover,
+                &:-webkit-autofill:focus,
+                &:-webkit-autofill:active {
+                    box-shadow: 0 0 0 30px transparent inset !important;
+                    -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+                    -webkit-text-fill-color: var(--text-color-100, #363636)
+                }
+    
+                &::placeholder {
+                    /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                    opacity: 1;
+                    /* Firefox */
+                }
+    
+                &:-ms-input-placeholder {
+                    /* Internet Explorer 10-11 */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                }
+    
+                &::-ms-input-placeholder {
+                    /* Microsoft Edge */
+                    color: var(--input-placeholder-color, var(--text-color-700, #5B6367));
+                }
             }
         }
     }
 }
 
-[data-theme="dark"] .input {
-    &[data-shade="100"] {
-        background: var(--input-background-color-default, var(--background-color-950, #242424));
-        border-color: var(--input-border-color-default, var(--border-color-950, #242424));
-        color: var(--input-text-color, var(--text-color-950, #ffffff));
-
-        input {
-            color: inherit;
-
-            &:-webkit-autofill,
-            &:-webkit-autofill:hover,
-            &:-webkit-autofill:focus,
-            &:-webkit-autofill:active {
-                box-shadow: 0 0 0 30px var(--background-color-950, #242424) inset !important;
-                -webkit-box-shadow: 0 0 0 30px var(--background-color-950, #242424) inset !important;
-                -webkit-text-fill-color: var(--text-color-950, #ffffff)
+@media (prefers-color-scheme: dark) {
+    .input {
+        &[data-variant="solid"] {
+            &[data-shade="100"] {
+                background: var(--input-background-color-default, var(--background-color-100, #242424));
+                border-color: var(--input-border-color-default, var(--border-color-100, #242424));
+                color: var(--input-text-color, var(--text-color-100, #ffffff));
+    
+                input {
+                    color: inherit;
+    
+                    &:-webkit-autofill,
+                    &:-webkit-autofill:hover,
+                    &:-webkit-autofill:focus,
+                    &:-webkit-autofill:active {
+                        box-shadow: 0 0 0 30px var(--background-color-100, #242424) inset !important;
+                        -webkit-box-shadow: 0 0 0 30px var(--background-color-100, #242424) inset !important;
+                        -webkit-text-fill-color: var(--text-color-100, #ffffff)
+                    }
+    
+                    &::placeholder {
+                        /* Chrome, Firefox, Opera, Safari 10.1+ */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                        opacity: 1;
+                        /* Firefox */
+                    }
+    
+                    &:-ms-input-placeholder {
+                        /* Internet Explorer 10-11 */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                    }
+    
+                    &::-ms-input-placeholder {
+                        /* Microsoft Edge */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                    }
+                }
+            }
+    
+            &[data-shade="200"] {
+                background: var(--input-background-color-default, var(--background-color-200, #2E2F30));
+                border-color: var(--input-border-color-default, var(--border-color-200, #2E2F30));
+                color: var(--input-text-color, var(--text-color-100, #ffffff));
+    
+                input {
+                    color: inherit;
+    
+                    &:-webkit-autofill,
+                    &:-webkit-autofill:hover,
+                    &:-webkit-autofill:focus,
+                    &:-webkit-autofill:active {
+                        box-shadow: 0 0 0 30px var(--background-color-200, #2E2F30) inset !important;
+                        -webkit-box-shadow: 0 0 0 30px var(--background-color-200, #2E2F30) inset !important;
+                        -webkit-text-fill-color: var(--text-color-100, #ffffff)
+                    }
+    
+                    &::placeholder {
+                        /* Chrome, Firefox, Opera, Safari 10.1+ */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                        opacity: 1;
+                        /* Firefox */
+                    }
+    
+                    &:-ms-input-placeholder {
+                        /* Internet Explorer 10-11 */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                    }
+    
+                    &::-ms-input-placeholder {
+                        /* Microsoft Edge */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                    }
+                }
             }
 
-            &::placeholder {
-                /* Chrome, Firefox, Opera, Safari 10.1+ */
-                color: var(--input-placeholder-color, var(--text-color-400, #616161));
-                opacity: 1;
-                /* Firefox */
-            }
-
-            &:-ms-input-placeholder {
-                /* Internet Explorer 10-11 */
-                color: var(--input-placeholder-color, var(--text-color-400, #616161));
-            }
-
-            &::-ms-input-placeholder {
-                /* Microsoft Edge */
-                color: var(--input-placeholder-color, var(--text-color-400, #616161));
+            &[data-shade="300"] {
+                background: var(--input-background-color-default, var(--background-color-300, #2E2F30));
+                border-color: var(--input-border-color-default, var(--border-color-300, #2E2F30));
+                color: var(--input-text-color, var(--text-color-100, #ffffff));
+    
+                input {
+                    color: inherit;
+    
+                    &:-webkit-autofill,
+                    &:-webkit-autofill:hover,
+                    &:-webkit-autofill:focus,
+                    &:-webkit-autofill:active {
+                        box-shadow: 0 0 0 30px var(--background-color-300, #2E2F30) inset !important;
+                        -webkit-box-shadow: 0 0 0 30px var(--background-color-300, #2E2F30) inset !important;
+                        -webkit-text-fill-color: var(--text-color-100, #ffffff)
+                    }
+    
+                    &::placeholder {
+                        /* Chrome, Firefox, Opera, Safari 10.1+ */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                        opacity: 1;
+                        /* Firefox */
+                    }
+    
+                    &:-ms-input-placeholder {
+                        /* Internet Explorer 10-11 */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                    }
+    
+                    &::-ms-input-placeholder {
+                        /* Microsoft Edge */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                    }
+                }
             }
         }
-    }
-
-    &[data-shade="200"] {
-        background: var(--input-background-color-default, var(--background-color-900, #2E2F30));
-        border-color: var(--input-border-color-default, var(--border-color-900, #2E2F30));
-        color: var(--input-text-color, var(--text-color-950, #ffffff));
-
-        input {
-            color: inherit;
-
-            &:-webkit-autofill,
-            &:-webkit-autofill:hover,
-            &:-webkit-autofill:focus,
-            &:-webkit-autofill:active {
-                box-shadow: 0 0 0 30px var(--background-color-900, #2E2F30) inset !important;
-                -webkit-box-shadow: 0 0 0 30px var(--background-color-900, #2E2F30) inset !important;
-                -webkit-text-fill-color: var(--text-color-950, #ffffff)
+        &[data-variant="outline"] {
+            &[data-shade="100"] {
+                background: transparent;
+                border-color: var(--input-border-color-default, var(--border-color-100, #242424));
+                color: var(--input-text-color, var(--text-color-100, #ffffff));
+    
+                input {
+                    color: inherit;
+    
+                    &:-webkit-autofill,
+                    &:-webkit-autofill:hover,
+                    &:-webkit-autofill:focus,
+                    &:-webkit-autofill:active {
+                        box-shadow: 0 0 0 30px transparent inset !important;
+                        -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+                        -webkit-text-fill-color: var(--text-color-100, #ffffff)
+                    }
+    
+                    &::placeholder {
+                        /* Chrome, Firefox, Opera, Safari 10.1+ */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                        opacity: 1;
+                        /* Firefox */
+                    }
+    
+                    &:-ms-input-placeholder {
+                        /* Internet Explorer 10-11 */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                    }
+    
+                    &::-ms-input-placeholder {
+                        /* Microsoft Edge */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                    }
+                }
+            }
+    
+            &[data-shade="200"] {
+                background: transparent;
+                border-color: var(--input-border-color-default, var(--border-color-200, #2E2F30));
+                color: var(--input-text-color, var(--text-color-100, #ffffff));
+    
+                input {
+                    color: inherit;
+    
+                    &:-webkit-autofill,
+                    &:-webkit-autofill:hover,
+                    &:-webkit-autofill:focus,
+                    &:-webkit-autofill:active {
+                        box-shadow: 0 0 0 30px transparent inset !important;
+                        -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+                        -webkit-text-fill-color: var(--text-color-100, #ffffff)
+                    }
+    
+                    &::placeholder {
+                        /* Chrome, Firefox, Opera, Safari 10.1+ */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                        opacity: 1;
+                        /* Firefox */
+                    }
+    
+                    &:-ms-input-placeholder {
+                        /* Internet Explorer 10-11 */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                    }
+    
+                    &::-ms-input-placeholder {
+                        /* Microsoft Edge */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                    }
+                }
             }
 
-            &::placeholder {
-                /* Chrome, Firefox, Opera, Safari 10.1+ */
-                color: var(--input-placeholder-color, var(--text-color-400, #616161));
-                opacity: 1;
-                /* Firefox */
-            }
-
-            &:-ms-input-placeholder {
-                /* Internet Explorer 10-11 */
-                color: var(--input-placeholder-color, var(--text-color-400, #616161));
-            }
-
-            &::-ms-input-placeholder {
-                /* Microsoft Edge */
-                color: var(--input-placeholder-color, var(--text-color-400, #616161));
+            &[data-shade="300"] {
+                background: transparent;
+                border-color: var(--input-border-color-default, var(--border-color-300, #2E2F30));
+                color: var(--input-text-color, var(--text-color-100, #ffffff));
+    
+                input {
+                    color: inherit;
+    
+                    &:-webkit-autofill,
+                    &:-webkit-autofill:hover,
+                    &:-webkit-autofill:focus,
+                    &:-webkit-autofill:active {
+                        box-shadow: 0 0 0 30px transparent inset !important;
+                        -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+                        -webkit-text-fill-color: var(--text-color-100, #ffffff)
+                    }
+    
+                    &::placeholder {
+                        /* Chrome, Firefox, Opera, Safari 10.1+ */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                        opacity: 1;
+                        /* Firefox */
+                    }
+    
+                    &:-ms-input-placeholder {
+                        /* Internet Explorer 10-11 */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                    }
+    
+                    &::-ms-input-placeholder {
+                        /* Microsoft Edge */
+                        color: var(--input-placeholder-color, var(--text-color-700, #616161));
+                    }
+                }
             }
         }
     }

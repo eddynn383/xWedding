@@ -1,6 +1,7 @@
 import sx from "@/styles/component.module.scss"
-import { Button } from ".."
+import { Button, Icon } from ".."
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Link from "next/link"
 
 const GuestEdit = ({data}: any) => {
     return (
@@ -9,9 +10,11 @@ const GuestEdit = ({data}: any) => {
                 {data.name && <span className={sx["user-name"]}>{data.name}</span>}
                 {data.table && <span className={sx["user-table"]}>{data.table}</span>}
             </div>
-            <Button url={`/guests/${data.id}`}>
-                <FontAwesomeIcon icon="user-pen" />
-            </Button>
+            <Link href={`/guests/${data.id}`}>
+                <Button type="button" size="M" variant="solid" mode="secondary" shade="100" content="icon">
+                    <Icon value="pen" />
+                </Button>
+            </Link>
         </div>
     )
 }

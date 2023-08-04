@@ -20,7 +20,7 @@ const Navigation = ({items}:NavigationProps) => {
 
                         return (
                             <li key={link.name || link.icon}>
-                                <Item item={link} state={isActive ? "selected": "default"}/>
+                                <Item item={link} state={isActive}/>
                             </li>
                         )
                     })
