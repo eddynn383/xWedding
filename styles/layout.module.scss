@@ -1,11 +1,9 @@
 .main {
-    display: grid;
-    grid-template-rows: auto min-content;
-    height: 100vh;
+    height: calc(100vh - 100px);
     &_content {
         display: grid;
-        grid-template-rows: min-content auto;
+        grid-template-rows: min-content calc(100% - 81px);
         overflow: hidden;
-        margin-bottom: 68px;
+        height: 100%;
     }
 }

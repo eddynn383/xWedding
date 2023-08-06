@@ -30,12 +30,14 @@ const Page = () => {
         <>
             <Header title="New Guest" description="Add below the details about the new guest" />
             <div className={sx["body"]}>
-                <form action={createGuest}>
-                    <Input id="fname" type="text" name="firstname" variant="solid" placeholder="Enter firstname" />
-                    <Input id="lname" type="text" name="lastname" variant="solid" placeholder="Enter lastname" />
+                <form action={createGuest} style={{"display": "grid", "gridTemplateRows": "min-content min-content", "gap": "24px"}}>
+                    <div style={{"display": "grid", "gridTemplateRows": "1fr 1fr", "gap": "12px"}}>
+                        <Input id="fname" type="text" name="firstname" variant="solid" placeholder="Enter firstname" size="L" />
+                        <Input id="lname" type="text" name="lastname" variant="solid" placeholder="Enter lastname" size="L" />
+                    </div>
                     <div className={sx["actions"]}>
                         <Link href="/guests">
-                            <Button type="button" size="M" variant="solid" mode="secondary" >Cancel</Button>
+                            <Button type="button" size="M" variant="solid" mode="secondary" style={{"width": "100%"}}>Cancel</Button>
                         </Link>
                         <Button type="submit" size="M" variant="solid" mode="primary">Save</Button>
                     </div>

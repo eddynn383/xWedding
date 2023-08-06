@@ -41,21 +41,23 @@ const Page = async ({ searchParams }: PageProps) => {
     return (
         <>
             <Header title="Guests" description="Choose a guest to see more details" />
-            <div className={sx["body"]} data-layout="two">
-                <div className={sx["body-content"]} style={{"gridTemplateRows":"min-content auto"}}>
+            <div className={sx["body"]} data-layout="two" style={{"gridTemplateRows": "min-content calc(100% - 71px)"}}>
+                <div className={sx["body-top"]}>
                     <Search search={search} />
+                </div>
+                <div className={sx["body-content"]} style={{"gridTemplateRows":"min-content auto"}}>
                     <ul className={sx["guest-list"]}>
-                        {guests.map((guest) => (
+                        {guests?.map((guest) => (
                             <li key={guest.id}>
                                 <GuestEdit data={guest} />
                             </li>
                         ))}
                     </ul>
-                </div>
-                <div className={sx["body-actions"]}>
-                    <Link href="/guests/new">
-                        <Button variant="solid" mode="primary" type="button" size="M" style={{"width": "100%"}}>Add Guest</Button>
-                    </Link>
+                    <div className={sx["body-actions"]}>
+                        <Link href="/guests/new">
+                            <Button variant="solid" mode="primary" type="button" size="L" style={{"width": "100%"}}>Add Guest</Button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </>

@@ -3,6 +3,10 @@
     grid-template-columns: auto 44px;
     align-items: center;
     background-color: var(--background-color-100);
-    padding: 14px;
-    border-radius: 12px;
+    padding: 10px;
+    border-radius: 20px;
+
+    &-details {
+        padding-left: 14px;
+    }
 } 

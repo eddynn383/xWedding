@@ -25,9 +25,9 @@ const Page = () => {
         <>
             <Header title="New Table" description="Add below the details about the new table" />
             <div className={sx["body"]}>
-                <form action={createTable}>
+                <form action={createTable} style={{}} className={sx["body-content"]}>
                     <Input id="table-number" type="number" name="number" variant="solid" placeholder="Enter Table No." />
-                    <div className={sx["actions"]}>
+                    <div className={sx["actions"]} style={{'gap': '12px'}}>
                         <Button url="/tables" type="button" size="M" variant="solid" mode="secondary">Cancel</Button>
                         <Button type="submit" size="M" variant="solid" mode="primary">Save</Button>
                     </div>
