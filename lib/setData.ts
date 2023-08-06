@@ -36,8 +36,6 @@ export async function setGuest(fname: string, lname: string) {
 
 export async function setTable(number: string) {
 
-    console.log(number)
-
     const num = parseInt(number)
 
     if (num) {  

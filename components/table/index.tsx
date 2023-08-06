@@ -1,9 +1,11 @@
-"use client"
+"use server"
 
-import { Key, useState } from "react";
-import { Button, Seat, Icon } from "@/components"
-import { deleteTable } from "@/lib/removeData";
+import { Key, startTransition, useEffect, useState } from "react";
+import { Button, Seat, Icon, SeatsList } from "@/components"
 import sx from "@/styles/component.module.scss"
+import { getAllSeatsById } from "@/lib/getData";
+import RemoveButton from "../removeButton";
+import { removeTable } from "@/lib/actions";
 
 type TableProps = {
     id: string;
@@ -16,76 +18,17 @@ type TableProps = {
     onRemove?: () => void;
 }
 
-const defaultPlaces = [
-    {
-        id: 1,
-        state: "filled"
-    },
-    {
-        id: 2,
-        state: "empty"
-    },
-    {
-        id: 3,
-        state: "empty"
-    },
-    {
-        id: 4,
-        state: "empty"
-    },
-    {
-        id: 5,
-        state: "empty"
-    },
-    {
-        id: 6,
-        state: "empty"
-    },
-    {
-        id: 7,
-        state: "empty"
-    },
-    {
-        id: 8,
-        state: "empty"
-    },
-    {
-        id: 9,
-        state: "empty"
-    },
-    {
-        id: 10,
-        state: "empty"
-    }
-]
-
-
-const Table = ({ id, places = defaultPlaces, number, isSelected=false, isRemovable=false, style, onRemove }:TableProps) => {
-
-    const [selected, setSelected] = useState(isSelected)
-
-    // const deleteHanlder = async () => {
-    //     "use server"
-    //     // return await deleteTable(id)
-    // }
-    // async function deleteHanlder() {
-    //     "use server"
-    //     return await deleteTable(id)
-    // }
-
-    console.log(id)
-
-    function selectHandler() {
-        console.log("Its clicked!")
-        setSelected(true)
-    }
+const Table = async ({ id, number, isSelected=false, isRemovable=false, style, onRemove }:TableProps) => {
+    const seats =  await getAllSeatsById(id)
 
     return (
         <>        
-            <div className={sx["table"]} style={style} data-selected={selected} onClick={selectHandler}>
+            <div className={sx["table"]} style={style} data-selected={isSelected}>
                 <div className={sx["table-inner"]}>
+
+                    {/* <SeatsList seats={seats} /> */}
                     {
-                        places?.map((item: any, idx: Key | null | undefined) => (
+                        seats?.map((item: any, idx: Key) => (
                             <Seat key={idx} id={item.id} state={item.state} size="S" />
                         ))
                     }
@@ -94,9 +37,7 @@ const Table = ({ id, places = defaultPlaces, number, isSelected=false, isRemovab
                 {
                     isRemovable &&
                     <div className={sx["table-close"]} >
-                        <Button type="submit" size="XXS" status="fail" variant="outline" content="icon">
-                            <Icon value="close" />
-                        </Button>
+                        <RemoveButton id={id} removeHandler={removeTable} />
                     </div>
                 }
             </div>

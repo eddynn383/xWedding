@@ -1,13 +1,18 @@
 import { Header, Table } from "@/components"
+import { getTables } from "@/lib/getData";
+import TablesList from "@/components/tables-list";
 import sx from "@/styles/component.module.scss";
 
-const Dashboard = () => {
+const Dashboard = async () => {
+    const tables = await getTables()
+
     return (
         <>
             <Header title="Restaurant" description="Choose a table to see more details" />
             <div className={sx["body"]} >
+                <TablesList tables={tables} isEditable={false} />
                 <div className={sx["tables"]}>
-                    <div className={sx["tables-left"]} >
+                    {/* <div className={sx["tables-left"]} >
                         <Table id="tsetasdfasdf" number={7} />
                         <Table id="345dgasdfasdf" number={8} />
                         <Table id="df234sahasdfas" number={9} />
@@ -19,7 +24,7 @@ const Dashboard = () => {
                         <Table id="756hdfghdfghsgd" number={4} />
                         <Table id="078943htfdfghhd" number={5} />
                         <Table id="567dfh43hteerth" number={6} />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>

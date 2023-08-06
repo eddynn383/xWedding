@@ -1,14 +1,34 @@
 import { Button, GuestEdit, Header, Icon, Input } from "@/components";
+import { Search } from "@/components";
 import { prisma } from "@/db";
 import sx from "@/styles/component.module.scss";
 import Link from "next/link";
+import { getGuests, getGuestsByName } from "@/lib/getData";
 
-function getGuests() {
-    return prisma.guest.findMany();
+// function getGuests() {
+//     return prisma.guest.findMany();
+// }
+
+type PageProps = {
+    searchParams: {
+        [key: string]: string | string[] | undefined
+    }
 }
 
-const Guests = async () => {
-    const guests = await getGuests();
+const Page = async ({ searchParams }: PageProps) => {
+
+    console.log("Search Params: ", searchParams)
+
+    // const page = typeof searchParams.page === "string" ? Number(searchParams.page) : 1
+    // const limit = typeof searchParams.limit === "string" ? Number(searchParams.limit) : 10
+
+    const search = typeof searchParams.search === "string" ? searchParams.search: undefined
+
+    const guests = await getGuestsByName(search);
+    // if (!searchParams) {
+    //     const guests = await getGuests();
+    // } else {
+    // }
 
     console.log(guests);
     // await prisma.guest.create({
@@ -23,7 +43,7 @@ const Guests = async () => {
             <Header title="Guests" description="Choose a guest to see more details" />
             <div className={sx["body"]} data-layout="two">
                 <div className={sx["body-content"]} style={{"gridTemplateRows":"min-content auto"}}>
-                    <Input id="search" name="search" type="text" placeholder="Search..." variant="solid" shade={300} iconBefore={<Icon value="magnifying-glass" />} />
+                    <Search search={search} />
                     <ul className={sx["guest-list"]}>
                         {guests.map((guest) => (
                             <li key={guest.id}>
@@ -42,4 +62,4 @@ const Guests = async () => {
     ); 
 };
 
-export default Guests;
+export default Page;

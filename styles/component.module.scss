@@ -9,6 +9,7 @@
 @import "../components/seat/style.scss";
 @import "../components/seats-list/style.scss";
 @import "../components/table/style.scss";
+@import "../components/tables-list/style.scss";
 
 .body {
     display: grid;
@@ -57,14 +58,4 @@
     &-right {
         align-content: start;
     } 
-}
-
-.tables-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    align-content: start;
 }

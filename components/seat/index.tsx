@@ -5,6 +5,10 @@ import { State } from "@prisma/client";
 import { deleteSeat } from "@/lib/removeData";
 import { Size } from "@/interfaces/global";
 import sx from "@/styles/component.module.scss"
+import { useEffect } from "react";
+import { useTransition } from "react";
+import { removeSeat } from "@/lib/actions";
+import RemoveButton from "../removeButton";
 
 type SeatProps = {
     id: string;
@@ -16,10 +20,7 @@ type SeatProps = {
 
 const Seat = ({ id, state="empty", size="S", isRemovable=false, onRemove }: SeatProps) => {
 
-    // async function removeHandler () {
-    //     console.log("delete seat!")
-    //     await deleteSeat(id)
-    // }
+    let [isPending, startTransition] = useTransition();
 
     return (
         <>
@@ -33,9 +34,7 @@ const Seat = ({ id, state="empty", size="S", isRemovable=false, onRemove }: Seat
                     {
                         (isRemovable && onRemove) &&
                         <div className={sx["seat-close"]} >
-                            <Button type="button" size="XXS" status="fail" variant="outline" content="icon" onClick={async () => {await onRemove(id)}}>
-                                <Icon value="close" />
-                            </Button>
+                            <RemoveButton id={id} removeHandler={removeSeat} />
                         </div>
                     }
                 </span>
