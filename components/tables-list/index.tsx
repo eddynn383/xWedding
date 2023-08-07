@@ -17,17 +17,13 @@ const TablesList = ({tables, isEditable}: TablesListProps) => {
                 isEditable ? (
                     tables.map((table: { id: string; number: number; }, idx: Key | null | undefined) => (
                         <li key={idx}>
-                            <Link href={`/tables/${table.id}`}>
-                                <Table id={table.id} number={table.number} isRemovable={idx === tables.length - 1} />
-                            </Link>
+                            <Table id={table.id} number={table.number} isEditable={isEditable} isRemovable={idx === tables.length - 1} />
                         </li>
                     ))
                 ) : (
                     tables.map((table: { id: string; number: number; }, idx: Key | null | undefined) => (
                         <li key={idx}>
-                            <Link href={`/dashboard/${table.id}`}>
-                                <Table id={table.id} number={table.number} isRemovable={false} />
-                            </Link>
+                            <Table id={table.id} number={table.number} isEditable={isEditable} isRemovable={false} />
                         </li>
                     ))
                 )

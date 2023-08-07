@@ -1,15 +1,17 @@
 "use client"
 
 import sx from "@/styles/component.module.scss"
-import { Seat } from "@/components";
+import { CreateSeat, Seat } from "@/components";
 import { Key, useEffect, useState } from "react";
 
 type SeatsListProps = {
     seats: any;
+    tableId: string;
+    onCreate?: any;
     onRemove?: any;
 }
 
-const SeatsList = ({seats, onRemove}: SeatsListProps) => {
+const SeatsList = ({seats, tableId, onCreate, onRemove}: SeatsListProps) => {
     // const [data, setData] = useState(seats)
 
     // useEffect(() => {
@@ -26,6 +28,9 @@ const SeatsList = ({seats, onRemove}: SeatsListProps) => {
                     </li>
                 ))
             }
+            <li>
+                <CreateSeat tableId={tableId} />
+            </li>
         </ul>
     )
 }

@@ -46,13 +46,21 @@ const Page = async ({ searchParams }: PageProps) => {
                     <Search search={search} />
                 </div>
                 <div className={sx["body-content"]} style={{"gridTemplateRows":"min-content auto"}}>
-                    <ul className={sx["guest-list"]}>
-                        {guests?.map((guest) => (
-                            <li key={guest.id}>
-                                <GuestEdit data={guest} />
-                            </li>
-                        ))}
-                    </ul>
+                    {
+                        guests.length > 0 ? (
+                            <ul className={sx["guest-list"]}>
+                                {                                    
+                                    guests?.map((guest) => (
+                                        <li key={guest.id}>
+                                            <GuestEdit data={guest} />
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        ): (
+                            <span>Ups! No user found!</span>
+                        )
+                    }
                     <div className={sx["body-actions"]}>
                         <Link href="/guests/new">
                             <Button variant="solid" mode="primary" type="button" size="L" style={{"width": "100%"}}>Add Guest</Button>

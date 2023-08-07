@@ -5,10 +5,11 @@ import sx from "@/styles/component.module.scss"
 
 type ModalProps = {
     type?: "drawer" | "popup";
+    isClosable: boolean;
     children: React.ReactNode;
 }
 
-export default function Modal({ type = "popup", children }: ModalProps) {
+export default function Modal({ type = "popup", isClosable,  children }: ModalProps) {
     const overlay = useRef(null)
     const wrapper = useRef(null)
     const router = useRouter()
@@ -19,18 +20,22 @@ export default function Modal({ type = "popup", children }: ModalProps) {
     }, [router])
 
     const onClick: MouseEventHandler = useCallback((e) => {
-            if (e.target === overlay.current || e.target === wrapper.current) {
-                if (onDismiss) onDismiss()
+            if(isClosable) {                
+                if (e.target === overlay.current || e.target === wrapper.current) {
+                    if (onDismiss) onDismiss()
+                }
             }
         },
-        [onDismiss, overlay, wrapper]
+        [isClosable, onDismiss, overlay, wrapper]
     )
 
     const onKeyDown = useCallback(
         (e: KeyboardEvent) => {
-            if (e.key === 'Escape') onDismiss()
+            if(isClosable) { 
+                if (e.key === 'Escape') onDismiss()
+            }
         },
-        [onDismiss]
+        [isClosable, onDismiss]
     )
 
     useEffect(() => {

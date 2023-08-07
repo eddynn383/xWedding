@@ -1,7 +1,10 @@
 .seats-list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 32px;
+    gap: 32px 16px;
     justify-items: center;
     align-content: start;
+    background-color: var(--background-color-100);
+    border-radius: 16px;
+    padding: 32px;
 }

@@ -30,7 +30,7 @@ const Page = () => {
         <>
             <Header title="New Guest" description="Add below the details about the new guest" />
             <div className={sx["body"]}>
-                <form action={createGuest} style={{"display": "grid", "gridTemplateRows": "min-content min-content", "gap": "24px"}}>
+                <form action={createGuest} className={sx["body-content"]} style={{"display": "grid", "gridTemplateRows": "min-content min-content", "gap": "24px"}}>
                     <div style={{"display": "grid", "gridTemplateRows": "1fr 1fr", "gap": "12px"}}>
                         <Input id="fname" type="text" name="firstname" variant="solid" placeholder="Enter firstname" size="L" />
                         <Input id="lname" type="text" name="lastname" variant="solid" placeholder="Enter lastname" size="L" />

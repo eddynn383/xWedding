@@ -1,13 +1,28 @@
 .modal {
-    display: block;
+    display: grid;
     position: fixed;
     inset: 0;
     transition: all .3s ease-in-out .3s;
+    padding: 16px;
     z-index: 9;
     &[data-type="popup"] {
         inset: 0;
         background-color: rgba(10, 10, 10, 0.5);
-        transform: translateY(100%);
+        opacity: 0;
+        .modal-inner {
+            display: grid;
+            gap: 32px;
+            align-self: center;
+            padding: 32px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.4;
+            background-color: var(--background-color-200);
+            border-radius: 16px;
+        }
+        &[data-state="active"] {
+            opacity: 1;
+        }
     }
     &[data-type="drawer"] {
         display: grid;
@@ -25,8 +40,8 @@
         }
         transform: translateY(100%);
         z-index: 7;
-    }
-    &[data-state="active"] {
-        transform: translateY(0);
+        &[data-state="active"] {
+            transform: translateY(0);
+        }
     }
 }

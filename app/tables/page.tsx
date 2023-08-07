@@ -11,7 +11,7 @@ const Tables = async () => {
         <>        
             <Header title="Tables" description="Define your tables here" />
             <div className={sx["body"]}>
-                <div className={sx["body-content"]}>
+                <div className={sx["body-content"]} style={{"gridTemplateRows": "min-content min-content", "gap": "32px"}}>
                     <TablesList tables={tables} isEditable={true} />
                     <Button url="/tables/new" type="button" variant="solid" size="M" style={{"width": "100%"}}>Add table</Button>
                 </div>

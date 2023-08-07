@@ -25,11 +25,11 @@ const Page = () => {
         <>
             <Header title="New Table" description="Add below the details about the new table" />
             <div className={sx["body"]}>
-                <form action={createTable} style={{}} className={sx["body-content"]}>
-                    <Input id="table-number" type="number" name="number" variant="solid" placeholder="Enter Table No." />
+                <form action={createTable} className={sx["body-content"]} style={{"gridTemplateRows": "min-content min-content", "gap": "32px"}}>
+                    <Input id="table-number" type="number" name="number" variant="solid" placeholder="Enter Table No." size="L" />
                     <div className={sx["actions"]} style={{'gap': '12px'}}>
-                        <Button url="/tables" type="button" size="M" variant="solid" mode="secondary">Cancel</Button>
-                        <Button type="submit" size="M" variant="solid" mode="primary">Save</Button>
+                        <Button url="/tables" type="button" size="L" variant="solid" mode="secondary">Cancel</Button>
+                        <Button type="submit" size="L" variant="solid" mode="primary">Save</Button>
                     </div>
                 </form>
             </div>

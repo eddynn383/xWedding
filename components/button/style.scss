@@ -178,7 +178,7 @@
 
     &[data-size="L"] {
         font-size: var(--button-l-font-size, var(--font-size-400, 16px));
-        font-weight: var(--button-l-font-weight, var(--font-weight-600, 600));
+        font-weight: var(--button-l-font-weight, var(--font-weight-500, 500));
         border-radius: var(--button-l-border-radius, var(--border-radius-400, 16px));
         &[data-content="text"] {
             padding-top: var(--button-l-padding-y, var(--button-l-padding, var(--padding-400, 16px)));
